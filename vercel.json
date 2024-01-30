@@ -13,7 +13,7 @@
     "routes": [
       { "src": "/api/auth/(.*)", "dest": "/index.js" },
       { "src": "/api/events/(.*)", "dest": "/index.js" },
-      { "src": "/(.*)", "dest": "/index.js" }
+      { "src": "/(.*)", "dest": "/public/$1" }
     ]
   }
   
