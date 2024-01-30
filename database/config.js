@@ -7,7 +7,7 @@ const dbConnection = async() => {
 
         await mongoose.connect( process.env.DB_CNN );
 
-        console.log('DB Omlime');
+        console.log('DB Online');
         
     } catch (error) {
         console.log(error);
