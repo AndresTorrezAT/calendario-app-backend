@@ -14,7 +14,7 @@ dbConnection();
 // CORS
 app.use(cors());
 
-// Direcctorio publico
+// Direcctorio publico: Ruta Publica
 app.use( express.static('public') );
 
 // Lectura y parseo del body
@@ -26,6 +26,10 @@ app.use('/api/auth', require('./routes/auth') );
 // TODO: Eventos
 app.use('/api/events', require('./routes/events') );
 
+// Rutas que no maneja Node y si el router de React
+app.get('*', ( req, res) => {
+    res.sendFile( __dirname + '/public/index.html'); // este maneja las rutas no /api
+})
 
 // Escuchar peticiones
 app.listen( process.env.PORT , () => {
